@@ -1,6 +1,6 @@
 module Spree
   class Image < Asset
-    include Rails.application.config.use_paperclip ? Configuration::Paperclip : Configuration::ActiveStorage
+    include Rails.application.config.use_paperclip ? Spree::Image::Configuration::Paperclip : Spree::Image::Configuration::ActiveStorage
     include Rails.application.routes.url_helpers
 
     def styles
