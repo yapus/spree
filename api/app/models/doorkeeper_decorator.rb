@@ -1,6 +1,6 @@
 module DoorkeeperDecorator
   def self.prepended(base)
-    base.table_name.prepend('spree_')
+    base.table_name.prepend('spree_') unless base.table_name.starts_with?('spree_')
   end
 end
 
